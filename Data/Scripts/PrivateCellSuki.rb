@@ -28,21 +28,6 @@ class PrivateCellDamselSuki < PrivateCellDamsel
 		end
 	end
 
-	def performAction (action)
-		if $game_variables[94] == 0
-			case action
-				when "acc1"
-					super("outfit6")
-					return
-				when "acc2"
-					super("outfit7")
-					return
-			end
-		end
-
-		super(action)
-	end
-
 	def initialize
     @tag = 'suki'
 		super()
@@ -56,10 +41,60 @@ class PrivateCellDamselSuki < PrivateCellDamsel
     @homophilia = 2 #0-5, where 0 is max and 5 is not at all, relative to disposition
 		@masochism = -1
 		
-		
 		@disposition = 3
 		@disposition_index = 651
 		@disposition_min = 3
+    
+    #outfits
+    @outfits = [
+      {
+        "name" => "default",
+        "action" => "outfitdefault"
+      },
+      {
+        "name" => "maid",
+        "action" => "outfit1",
+        "acc" => [
+          {"name" => "headpiece", "action" => ["outfit1", "acc1"]},
+        ],
+      },
+      {
+        "name" => "bikini",
+        "action" => "outfit2",
+        "acc" => [
+          {"name" => "sunglasses", "action" => ["outfit2", "acc1"]}, 
+          {"name" => "armbands", "action" => ["outfit2", "acc2"]}
+        ]
+      },
+      {
+        "name" => "princess",
+        "action" => "outfit3",
+      },
+      {
+        "name" => "bunnygirl",
+        "action" => "outfit4",
+        "acc" => [
+          {"name" => "ears", "action" => ["outfit4", "acc1"]},
+          {"name" => "bowtie", "action" => ["outfit4", "acc2"]},
+        ],
+      },
+      {
+        "name" => "wedding",
+        "action" => "outfit5",
+      }
+    ]
+    
+    #special gags
+    @specialGags = [
+      {
+        "name" => "special 1",
+        "action" => "sgag1",
+      },
+      {
+        "name" => "special 2",
+        "action" => "sgag2",
+      },
+    ]
 		
 		#bases
 		list = {
@@ -71,8 +106,8 @@ class PrivateCellDamselSuki < PrivateCellDamsel
 			'outfit4'=> [30,'PCSuki_bunnygirl',0,0,0,0,100,100,255,0],
 			'outfit5'=> [30,'PCSuki_wedding',0,0,0,0,100,100,255,0],
 
-			'outfit6' => [30,'PCSuki_behind head',0,0,0,0,100,100,255,0],
-			'outfit7' => [30,'PCSuki_handsinfront',0,0,0,0,100,100,255,0],
+			'outfitdefault2' => [30,'PCSuki_behind head',0,0,0,0,100,100,255,0],
+			'outfitdefault3' => [30,'PCSuki_handsinfront',0,0,0,0,100,100,255,0],
 		}
 		@images['base'] = list
 		

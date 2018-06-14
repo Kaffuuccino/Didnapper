@@ -209,7 +209,7 @@
   },
   "12": {
     "typeName": "RPG::MapInfo",
-    "expanded": true,
+    "expanded": false,
     "name": "Priory",
     "order": 424,
     "parent_id": 3,
@@ -4592,7 +4592,7 @@
   },
   "559": {
     "typeName": "RPG::MapInfo",
-    "expanded": true,
+    "expanded": false,
     "name": "Slaver Camp (Backup)",
     "order": 476,
     "parent_id": 358,

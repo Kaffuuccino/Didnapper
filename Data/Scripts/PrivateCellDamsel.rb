@@ -1,5 +1,5 @@
 def pc_regen
-	$privateCellDamsels[$currentPrivateCellDamsel].regeneratePicture
+	return $privateCellDamsels[$currentPrivateCellDamsel].regeneratePicture
 end
 def pc_action(act)
   $privateCellDamsels[$currentPrivateCellDamsel].performAction(act)
@@ -455,12 +455,11 @@ class PrivateCellDamsel
 					if action[0..5] == 'outfit' && @@saved[@tag]['outfit'] != action
 						@@saved[@tag]['outfit'] = action
             
-						
 						#@conversationStack = @dialogue[@currentOutfit][@@saved[@tag]['disposition']-1][mood[0]].clone
 						@conversationStack = getDialogue(@@saved[@tag]['outfit'],mood[0],@@saved[@tag]['disposition']-1)
 						outfitEffect
-          elsif action[0..2]=='acc'
-            case $game_variables[94]
+          elsif  action[0..2]=='acc'
+            case 999999999 #$game_variables[94]
             when 0
               if @images['base'].has_key?('outfitdefault') &&  @@saved[@tag]['outfit']!= 'outfitdefault'
                 @@saved[@tag]['outfit'] = 'outfitdefault'
@@ -488,9 +487,9 @@ class PrivateCellDamsel
             if !@@saved[@tag]['accessories'][outfit].has_key?(action)
               @@saved[@tag]['accessories'][outfit][action] = true
             else
-                @@saved[@tag]['accessories'][outfit][action] = ! @@saved[@tag]['accessories'][outfit][action]
+              @@saved[@tag]['accessories'][outfit][action] = ! @@saved[@tag]['accessories'][outfit][action]
             end
-          elsif action[0..3]='sgag'
+          elsif action[0..3] == 'sgag'
             if @images['mouth'].has_key?(action)
               @conversationStack = getDialogue('gag',mood[0],@@saved[@tag]['disposition']-1)
               increaseEmotion('anger')
@@ -761,9 +760,18 @@ class PrivateCellDamsel
       bitm = Bitmap.new(350,60)
       bitm.draw_text(0,0,350,60,message['message'])
       $override_pic['pc_canvas'].blt(0,0,bitm,bitm.rect,opacity)
-   end
-		#still need this to display pc_canvas
-		$data_common_events[96].list = [RPG::EventCommand.new(231,231,[30,'pc_canvas',0,0,0,0,100,100,255,0]),endEvent]
+    end
+    #still need this to display pc_canvas
+    #return [30,'pc_canvas',0,0,0,0,100,100,255,0]
+    $data_common_events[96].list = [RPG::EventCommand.new(231,231,[30,'pc_canvas',0,0,0,0,100,100,255,0]),endEvent]
+  end
+  
+  def getOutfits
+    return @outfits
+  end
+  
+  def getSpecialGags
+    return @specialGags
   end
 end
 
