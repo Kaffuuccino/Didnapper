@@ -154,11 +154,16 @@ class PrivateCellDamselCarol < PrivateCellDamsel
 			],\
 			'fear' =>\
 			[\
-				{'text'=>'  n/a', 'talking'=>true,'proc'=>nil}\
+				{'text'=>'  Suki1:  You look really cute like that', 'talking'=>false,'proc'=>nil},\
+				{'text'=>'  Carol:  Do you really mean that?', 'talking'=>true,'proc'=>method(:face_shy)},\
+				{'text'=>'  Suki1:  Of course I do. The way struggling and getting all flustered...', 'talking'=>false,'proc'=>nil},\
+				{'text'=>'  Suki1:  It just looks well... cute.', 'talking'=>false,'proc'=>nil},\
+				{'text'=>'  Carol:  Thanks Suki1', 'talking'=>true,'proc'=>method(:face_happy)}\
 			],\
 			'anger' =>\
 			[\
-				{'text'=>'  n/a', 'talking'=>true,'proc'=>nil}\
+				{'text'=>'  Suki1:  Hey, cheer up. You just need a little longer, right?', 'talking'=>false,'proc'=>nil},\
+				{'text'=>'  Carol:  Y-yeah!', 'talking'=>true,'proc'=>method(:face_happy)},\
 			]\
 		},\
 		{\
@@ -190,11 +195,16 @@ class PrivateCellDamselCarol < PrivateCellDamsel
 			],\
 			'fear' =>\
 			[\
-				{'text'=>'  n/a', 'talking'=>true,'proc'=>nil}\
+				{'text'=>'  Suki1:  You look really cute like that', 'talking'=>false,'proc'=>nil},\
+				{'text'=>'  Carol:  Do you really mean that?', 'talking'=>true,'proc'=>method(:face_shy)},\
+				{'text'=>'  Suki1:  Of course I do. The way struggling and getting all flustered...', 'talking'=>false,'proc'=>nil},\
+				{'text'=>'  Suki1:  It just looks well... cute.', 'talking'=>false,'proc'=>nil},\
+				{'text'=>'  Carol:  Thanks Suki1', 'talking'=>true,'proc'=>method(:face_happy)}\
 			],\
 			'anger' =>\
 			[\
-				{'text'=>'  n/a', 'talking'=>true,'proc'=>nil}\
+				{'text'=>'  Suki1:  Hey, cheer up. You just need a little longer, right?', 'talking'=>false,'proc'=>nil},\
+				{'text'=>'  Carol:  Y-yeah!', 'talking'=>true,'proc'=>method(:face_happy)},\
 			]\
 		}\
 	],\
@@ -228,11 +238,16 @@ class PrivateCellDamselCarol < PrivateCellDamsel
 			],\
 			'fear' =>\
 			[\
-				{'text'=>'  n/a', 'talking'=>true,'proc'=>nil}\
+				{'text'=>'  Suki1:  You look so helpless...', 'talking'=>false,'proc'=>nil},\
+				{'text'=>'  Suki1:  Just like all the other girls I\'ve tied up.', 'talking'=>false,'proc'=>nil},\
+				{'text'=>'  Carol:  N-No I don\'t! You\'re just saying that to tease me!', 'talking'=>true,'proc'=>method(:face_annoyed)},\
 			],\
 			'anger' =>\
 			[\
-				{'text'=>'  n/a', 'talking'=>true,'proc'=>nil}\
+				{'text'=>'  Suki1:  Instead of getting all angry you could put your efforts into escaping.', 'talking'=>false,'proc'=>nil},\
+				{'text'=>'  Carol:  What does it look like I\'m doing?!', 'talking'=>true,'proc'=>method(:face_annoyed)},\
+				{'text'=>'  Suki1:  Well, not at a lot honestly.', 'talking'=>false,'proc'=>nil},\
+				{'text'=>'  Carol:  Grrr', 'talking'=>true,'proc'=>method(:face_angry)},\
 			]\
 		},\
 		{\
@@ -258,11 +273,16 @@ class PrivateCellDamselCarol < PrivateCellDamsel
 			],\
 			'fear' =>\
 			[\
-				{'text'=>'  n/a', 'talking'=>true,'proc'=>nil}\
+				{'text'=>'  Suki1:  You look so helpless...', 'talking'=>false,'proc'=>nil},\
+				{'text'=>'  Suki1:  Just like all the other girls I\'ve tied up.', 'talking'=>false,'proc'=>nil},\
+				{'text'=>'  Carol:  N-No I don\'t! You\'re just saying that to tease me!', 'talking'=>true,'proc'=>method(:face_annoyed)},\
 			],\
 			'anger' =>\
 			[\
-				{'text'=>'  n/a', 'talking'=>true,'proc'=>nil}\
+				{'text'=>'  Suki1:  Instead of getting all angry you could put your efforts into escaping.', 'talking'=>false,'proc'=>nil},\
+				{'text'=>'  Carol:  What does it look like I\'m doing?!', 'talking'=>true,'proc'=>method(:face_annoyed)},\
+				{'text'=>'  Suki1:  Well, not at a lot honestly.', 'talking'=>false,'proc'=>nil},\
+				{'text'=>'  Carol:  Grrr', 'talking'=>true,'proc'=>method(:face_angry)},\
 			]\
 		}\
 	],\
@@ -295,11 +315,14 @@ class PrivateCellDamselCarol < PrivateCellDamsel
 			],\
 			'fear' =>\
 			[\
-				{'text'=>'  n/a', 'talking'=>true,'proc'=>nil}\
+				{'text'=>'  Suki1:  Maybe I have keep you in here a bit to long...', 'talking'=>false,'proc'=>nil},\
+				{'text'=>'  Suki1:  How about I take you for a nice walk outside like that?', 'talking'=>false,'proc'=>nil},\
+				{'text'=>'  Carol:  Y\'know I\'m actually quite comfortable here.', 'talking'=>true,'proc'=>method(:face_afraid)},\
 			],\
 			'anger' =>\
 			[\
-				{'text'=>'  n/a', 'talking'=>true,'proc'=>nil}\
+				{'text'=>'  Suki1:  If you\'re just going to give me that frowny face I may as well have you blindfolded and gagged constantly.', 'talking'=>false,'proc'=>nil},\
+				{'text'=>'  Carol:  I can\'t help it if your being this mean to me!', 'talking'=>true,'proc'=>method(:face_sad)},\
 			]\
 		},\
 		{\
@@ -331,11 +354,14 @@ class PrivateCellDamselCarol < PrivateCellDamsel
 			],\
 			'fear' =>\
 			[\
-				{'text'=>'  n/a', 'talking'=>true,'proc'=>nil}\
+				{'text'=>'  Suki1:  Maybe I have keep you in here a bit to long...', 'talking'=>false,'proc'=>nil},\
+				{'text'=>'  Suki1:  How about I take you for a nice walk outside like that?', 'talking'=>false,'proc'=>nil},\
+				{'text'=>'  Carol:  Y\'know I\'m actually quite comfortable here.', 'talking'=>true,'proc'=>method(:face_afraid)},\
 			],\
 			'anger' =>\
 			[\
-				{'text'=>'  n/a', 'talking'=>true,'proc'=>nil}\
+				{'text'=>'  Suki1:  If you\'re just going to give me that frowny face I may as well have you blindfolded and gagged constantly.', 'talking'=>false,'proc'=>nil},\
+				{'text'=>'  Carol:  I can\'t help it if your being this mean to me!', 'talking'=>true,'proc'=>method(:face_sad)},\
 			]\
 		}\
 	],\
@@ -368,11 +394,13 @@ class PrivateCellDamselCarol < PrivateCellDamsel
 			],\
 			'fear' =>\
 			[\
-				{'text'=>'  n/a', 'talking'=>true,'proc'=>nil}\
+				{'text'=>'  Suki1:  Time for a little punishment.', 'talking'=>false,'proc'=>method(:face_afraid)},\
+				{'text'=>'  Carol:  It fine. I deserve it!', 'talking'=>true,'proc'=>method(:face_default)},\
 			],\
 			'anger' =>\
 			[\
-				{'text'=>'  n/a', 'talking'=>true,'proc'=>nil}\
+				{'text'=>'  Suki1:  Time for a little punishment.', 'talking'=>false,'proc'=>method(:face_afraid)},\
+				{'text'=>'  Carol:  Hey! Thats mean!', 'talking'=>true,'proc'=>method(:face_default)},\
 			]\
 		},\
 		{\
@@ -398,11 +426,13 @@ class PrivateCellDamselCarol < PrivateCellDamsel
 			],\
 			'fear' =>\
 			[\
-				{'text'=>'  n/a', 'talking'=>true,'proc'=>nil}\
+				{'text'=>'  Suki1:  Time for a little punishment.', 'talking'=>false,'proc'=>method(:face_afraid)},\
+				{'text'=>'  Carol:  It fine. I deserve it!', 'talking'=>true,'proc'=>method(:face_default)},\
 			],\
 			'anger' =>\
 			[\
-				{'text'=>'  n/a', 'talking'=>true,'proc'=>nil}\
+				{'text'=>'  Suki1:  Time for a little punishment.', 'talking'=>false,'proc'=>method(:face_afraid)},\
+				{'text'=>'  Carol:  Hey! Thats mean!', 'talking'=>true,'proc'=>method(:face_default)},\
 			]\
 		}\
 	],\

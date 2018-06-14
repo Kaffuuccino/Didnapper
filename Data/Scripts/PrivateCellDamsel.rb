@@ -368,6 +368,8 @@ class PrivateCellDamsel
         end
 				#@conversationStack = @dialogue['tickle'][@@saved[@tag]['disposition']-1][mood[0]].clone
 				@conversationStack = getDialogue('tickle',mood[0],@@saved[@tag]['disposition']-1)
+				when 'grope'
+				@conversationStack = getDialogue('grope','all',0)
 				when 'overhead'
 				@position = "behind_head"
 				@conversationStack = @dialogue['head'][@@saved[@tag]['disposition']-1][mood[0]].clone

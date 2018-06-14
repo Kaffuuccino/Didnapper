@@ -27,6 +27,22 @@ class PrivateCellDamselSuki < PrivateCellDamsel
       Audio.se_play("Audio/SE/mediummmmph3", 100, 100)
 		end
 	end
+
+	def performAction (action)
+		if $game_variables[94] == 0
+			case action
+				when "acc1"
+					super("outfit6")
+					return
+				when "acc2"
+					super("outfit7")
+					return
+			end
+		end
+
+		super(action)
+	end
+
 	def initialize
     @tag = 'suki'
 		super()
@@ -46,7 +62,18 @@ class PrivateCellDamselSuki < PrivateCellDamsel
 		@disposition_min = 3
 		
 		#bases
-		list = {'outfitdefault' => [30,'PCSuki_handsbehind',0,0,0,0,100,100,255,0],'outfit1'=> [30,'PCSuki_maid',0,0,0,0,100,100,255,0],'outfit2'=> [30,'PCSuki_bikini',0,0,0,0,100,100,255,0],'outfit3'=> [30,'PCSuki_princess',0,0,0,0,100,100,255,0],'outfit4'=> [30,'PCSuki_bunnygirl',0,0,0,0,100,100,255,0],'outfit5'=> [30,'PCSuki_wedding',0,0,0,0,100,100,255,0]}
+		list = {
+			'outfitdefault' => [30,'PCSuki_handsbehind',0,0,0,0,100,100,255,0],
+
+			'outfit1'=> [30,'PCSuki_maid',0,0,0,0,100,100,255,0],
+			'outfit2'=> [30,'PCSuki_bikini',0,0,0,0,100,100,255,0],
+			'outfit3'=> [30,'PCSuki_princess',0,0,0,0,100,100,255,0],
+			'outfit4'=> [30,'PCSuki_bunnygirl',0,0,0,0,100,100,255,0],
+			'outfit5'=> [30,'PCSuki_wedding',0,0,0,0,100,100,255,0],
+
+			'outfit6' => [30,'PCSuki_behind head',0,0,0,0,100,100,255,0],
+			'outfit7' => [30,'PCSuki_handsinfront',0,0,0,0,100,100,255,0],
+		}
 		@images['base'] = list
 		
 		#brows
@@ -780,23 +807,16 @@ class PrivateCellDamselSuki < PrivateCellDamsel
 		diaArray.push({'text'=>'Suki1: Ahahaha! C-Carollll! Hahaha!','proc'=>nil,'talking'=>true})
 		emoHash['happiness'] = diaArray
 		
-
-
-		
 		diaArray = []
 		diaArray.push({'text'=>'Carol: I’ve been wanting to do this for a while…','proc'=>nil})
 		diaArray.push({'text'=>'Suki1: No! Nonono- ahahah! Hahaha!','proc'=>nil,'talking'=>true})
 		emoHash['shyness'] = diaArray
 		
-
-		
 		diaArray = []
 		diaArray.push({'text'=>'Carol: I’ve been wanting to do this for a while…','proc'=>nil})
 		diaArray.push({'text'=>'Suki1: I’m not going t-t-to- hahaha! No! Nnnnhahahaha!','proc'=>nil,'talking'=>true})
 		emoHash['sadness'] = diaArray
-		
 
-		
 		diaArray = []
 		
 		emoHash['fear'] = diaArray
@@ -823,16 +843,11 @@ class PrivateCellDamselSuki < PrivateCellDamsel
 		diaArray.push({'text'=>'Carol: I’ve been wanting to do this for a while…','proc'=>nil})
 		diaArray.push({'text'=>'Suki1: Aaaah! Hahahaha! Hehehe!','proc'=>nil,'talking'=>true})
 		emoHash['happiness'] = diaArray
-
-
 		
 		diaArray = []
 		diaArray.push({'text'=>'Carol: I’ve been wanting to do this for a while…','proc'=>nil})
 		diaArray.push({'text'=>'Suki1: Heeheehahaha! Stop!','proc'=>nil,'talking'=>true})
 		emoHash['shyness'] = diaArray
-
-
-
 		
 		diaArray = []
 		diaArray.push({'text'=>'Carol: I’ve been wanting to do this for a while…','proc'=>nil})
@@ -848,7 +863,6 @@ class PrivateCellDamselSuki < PrivateCellDamsel
 		diaArray.push({'text'=>'Carol: I’ve been wanting to do this for a while…','proc'=>nil})
 		diaArray.push({'text'=>'Suki1: Hey! Don’t- hehehehe! S-s-stop!','proc'=>nil,'talking'=>true})
 		emoHash['neutral'] = diaArray
-
 		
 		@dialogue['tickle'][3] = emoHash
 		#--------------------------------------------------
@@ -1969,10 +1983,17 @@ class PrivateCellDamselSuki < PrivateCellDamsel
 		diaArray.push({'text'=>'Carol: Okay, that’s enough for now.','proc'=>nil})
 		diaArray.push({'text'=>'Suki1: Whew…','proc'=>nil,'talking'=>true})
 		emoHash['neutral'] = diaArray
-
-
 		
 		@dialogue['intro'][3] = emoHash
+		
+		@dialogue['grope'] = [
+				{
+				'all' => [
+					{'text'=>'  Carol:  You have an amazing figure...', 'talking'=>false,'proc'=>nil},
+					{'text'=>'  Suki1:  Hey! Just where are you touching?', 'talking'=>true,'proc'=>method(:face_annoyed)},
+				],
+			},
+		]
 	end
 	
 end

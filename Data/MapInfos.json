@@ -2900,7 +2900,7 @@
   },
   "39": {
     "typeName": "RPG::MapInfo",
-    "expanded": false,
+    "expanded": true,
     "name": "The Lair - Main Hall",
     "order": 15,
     "parent_id": 0,
@@ -4661,6 +4661,15 @@
     "parent_id": 255,
     "scroll_x": 320,
     "scroll_y": 288
+  },
+  "566": {
+    "typeName": "RPG::MapInfo",
+    "expanded": false,
+    "name": "TK_leeroy",
+    "order": 566,
+    "parent_id": 0,
+    "scroll_x": 320,
+    "scroll_y": 240
   },
   "57": {
     "typeName": "RPG::MapInfo",
