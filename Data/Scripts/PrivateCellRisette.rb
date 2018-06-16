@@ -38,10 +38,39 @@ class PrivateCellDamselRisette < PrivateCellDamsel
     @homophilia = 1
 		@masochism = 1
 		
-		
 		@disposition = 1
 		@disposition_index = 664
 		@disposition_min = 1
+    
+    #outfits
+    @outfits = [
+      {
+        "name" => "default",
+        "action" => "outfitdefault",
+      },
+      {
+        "name" => "cowgirl",
+        "action" => "outfit2",
+        "acc" => [
+          {"name" => "red hair", "action" => ["outfit2", "acc1"]},
+          {"name" => "hat", "action" => ["outfit2", "acc2"]},
+        ]
+      },
+      {
+        "name" => "bunny",
+        "action" => "outfit1",
+        "acc" => [
+          {"name" => "ears", "action" => ["outfit1", "acc1"]},
+          {"name" => "tail", "action" => ["outfit1", "acc2"]},
+        ]
+      },
+    ]
+    
+    #special gags
+    @specialGags = [
+      { "name" => "special 1", "action" => "sgag1", },
+      { "name" => "special 2", "action" => "sgag2", },
+    ]
 		
 		#bases
     list = {'outfitdefault' => [30,'PCRisetteBase',0,0,-100,0,100,100,255,0],'outfit2'=> [30,'PCRisetteBaseCow',0,0,-100,0,100,100,255,0],'outfit1'=> [30,'PCRisetteBaseBunny',0,0,-100,0,100,100,255,0]}

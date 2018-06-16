@@ -38,11 +38,26 @@ class PrivateCellDamselAlyssa < PrivateCellDamsel
     @homophilia = 3
 		@masochism = 2
 		
-		
 		@disposition = 1
 		@disposition_index = 651
 		@disposition_min = 1
+    
+    #outfits
+    @outfits = [
+      {
+        "name" => "default",
+        "action" => "outfitdefault",
+      },
+      {
+        "name" => "bikini",
+        "action" => "outfit1",
+      },
+    ]
 		
+    #special gags
+    @specialGags = [
+      { "name" => "special 1", "action" => "sgag1", },
+    ]
     
     list = {'outfitdefault' => [30,'PCAlyssaBase',0,0,0,0,100,100,255,0],'outfit1'=> [30,'PCAlyssaBaseBikini',0,0,0,0,100,100,255,0]}
     @images['base'] = list

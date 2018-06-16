@@ -49,7 +49,7 @@ class PrivateCellDamselSuki < PrivateCellDamsel
     @outfits = [
       {
         "name" => "default",
-        "action" => "outfitdefault"
+        "action" => "outfitdefault",
       },
       {
         "name" => "maid",
@@ -86,14 +86,8 @@ class PrivateCellDamselSuki < PrivateCellDamsel
     
     #special gags
     @specialGags = [
-      {
-        "name" => "special 1",
-        "action" => "sgag1",
-      },
-      {
-        "name" => "special 2",
-        "action" => "sgag2",
-      },
+      { "name" => "special 1", "action" => "sgag1", },
+      { "name" => "special 2", "action" => "sgag2", },
     ]
 		
 		#bases

@@ -37,10 +37,31 @@ class PrivateCellDamselMermaid < PrivateCellDamsel
     @homophilia = 1
 		@masochism = 2
 		
-		
 		@disposition = 1
 		@disposition_index = 664
 		@disposition_min = 1
+    
+    #outfits
+    @outfits = [
+      {
+        "name" => "default",
+        "action" => "outfitdefault",
+      },
+      {
+        "name" => "sailor",
+        "action" => "outfit1",
+        "acc" => [
+          {"name" => "ponytail", "action" => ["outfit1", "acc1"]},
+          {"name" => "cap", "action" => ["outfit1", "acc2"]},
+        ]
+      },
+    ]
+    
+    #special gags
+    @specialGags = [
+      { "name" => "special 1", "action" => "sgag1", },
+      { "name" => "special 2", "action" => "sgag2", },
+    ]
 		
 		#bases
 		list = {'outfitdefault' => [30,'PCMermaidBase',0,0,-150,0,100,100,255,0],'outfit1'=> [30,'PCMermaidBaseSailor',0,0,-150,0,100,100,255,0]}

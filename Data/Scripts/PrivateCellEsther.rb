@@ -42,6 +42,37 @@ class PrivateCellDamselEsther < PrivateCellDamsel
 		@disposition = 1
 		@disposition_index = 655
 		@disposition_min = 1
+    
+    #outfits
+    @outfits = [
+      {
+        "name" => "default",
+        "action" => "outfitdefault",
+      },
+      {
+        "name" => "bikini",
+        "action" => "outfit1",
+        #"acc" => [
+          #{"name" => "acc1", "action" => ["outfit1", "acc1"]}, 
+          #{"name" => "acc2", "action" => ["outfit1", "acc2"]}
+        #]
+      },
+      {
+        "name" => "demon",
+        "action" => "outfit2",
+        "acc" => [
+          {"name" => "horns", "action" => ["outfit2", "acc1"]}, 
+          {"name" => "tail", "action" => ["outfit2", "acc2"]}
+        ]
+      },
+    ]
+    
+    #special gags
+    @specialGags = [
+      { "name" => "special 1", "action" => "sgag1", },
+      { "name" => "special 2", "action" => "sgag2", },
+      { "name" => "special 3", "action" => "sgag3", },
+    ]
 		
 		#bases
 #		list = {'back' => [30,'PCEstherBase',0,0,-150,0,100,100,255,0],'head'=> [30,'PCEsther_behind head',0,0,-150,0,100,100,255,0], 'front' => [30,'PCEsther_handsinfront',0,0,-150,0,100,100,255,0]}

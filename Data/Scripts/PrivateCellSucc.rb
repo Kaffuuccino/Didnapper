@@ -38,10 +38,32 @@ class PrivateCellDamselSucc < PrivateCellDamsel
     @homophilia = 0
 		@masochism = 0
 		
-		
 		@disposition = 2
 		@disposition_index = 651
 		@disposition_min = 1
+    
+    #outfits
+    @outfits = [
+      {
+        "name" => "default",
+        "action" => "outfitdefault",
+      },
+      {
+        "name" => "sleapwear",
+        "action" => "outfit1",
+      },
+      {
+        "name" => "kinky",
+        "action" => "outfit2",
+      },
+    ]
+    
+    #special gags
+    @specialGags = [
+      { "name" => "special 1", "action" => "sgag1", },
+      { "name" => "special 2", "action" => "sgag2", },
+      { "name" => "special 3", "action" => "sgag3", },
+    ]
 		
 		#bases
 		list = {'outfitdefault' => [30,'PCSucc_base',0,0,0,0,100,100,255,0],'outfit1'=> [30,'PCSucc_sleepwear',0,0,0,0,100,100,255,0],'outfit2'=> [30,'PCSucc_kinky',0,0,0,0,100,100,255,0]}

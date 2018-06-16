@@ -42,6 +42,11 @@ class PrivateCellDamselBurglar < PrivateCellDamsel
 		@disposition = 2
 		@disposition_index = 664
 		@disposition_min = 1
+    
+    #special gags
+    @specialGags = [
+      { "name" => "special 1", "action" => "sgag1", },
+    ]
 		
 		#bases
 		list = {'back' => [30,'PCBurglarBase',0,0,0,0,100,100,255,0]}

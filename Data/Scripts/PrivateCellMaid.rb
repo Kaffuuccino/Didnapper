@@ -65,10 +65,31 @@ class PrivateCellDamselMaid < PrivateCellDamsel
     @homophilia = 1
 		@masochism = -1
 		
-		
 		@disposition = 2
 		@disposition_index = 656
 		@disposition_min = 1
+    
+    #outfits
+    @outfits = [
+      {
+        "name" => "default",
+        "action" => "outfitdefault",
+      },
+      {
+        "name" => "cat",
+        "action" => "outfit1",
+        "acc" => [
+          {"name" => "tail", "action" => ["outfit1", "acc1"]}, 
+        ]
+      },
+    ]
+    
+    #special gags
+    @specialGags = [
+      { "name" => "special 1", "action" => "sgag1", },
+      { "name" => "special 2", "action" => "sgag2", },
+      { "name" => "special 3", "action" => "sgag3", },
+    ]
 		
 		#bases
 		list = {'outfitdefault' => [30,'PCMaidBase',0,0,0,0,100,100,255,0],'outfit1'=> [30,'PCMaidBaseCat',0,0,0,0,100,100,255,0]}

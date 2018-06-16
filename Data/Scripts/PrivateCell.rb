@@ -28,7 +28,7 @@ class PC_main
     $game_variables[483] = 498
     $game_variables[484] = 12
     
-    $currentPrivateCellDamsel = "suki"
+    #$currentPrivateCellDamsel = "suki"
     
     damsel = $privateCellDamsels[$currentPrivateCellDamsel]
     
@@ -95,8 +95,13 @@ class PC_main
         "action" => "blindfold",
       },
       {
+        "name" => "remove",
+        "action" => "cancel",
+      },
+      {
         "name" => "quit",
-      }
+        "action" => "quit",
+      },
     ]
     
     @menu = @menuMain
@@ -185,6 +190,8 @@ class PC_main
           @select = 0
           @selectH = 0
           redraw_menu()
+        elsif item["action"] == "quit"
+          break
         elsif item.has_key?("action")
           if item["action"].kind_of?(Array)
             item["action"].each do |action|
@@ -192,11 +199,13 @@ class PC_main
             end
           else
             pc_action(item["action"])
+            if item["action"] == "cancel"
+              $game_switches[276] = false
+              break
+            end
           end
-        elsif item.has_key?("array")
+        elsif item.has_key?("array") && item["array"].length > 0
           pc_action(item["array"][@selectH]["action"])
-        elsif item["name"] == "quit"
-          break
         end
       end
       
@@ -211,6 +220,8 @@ class PC_main
       
       @pointer.y = 10 + @select * 40
     end
+    
+    unload()
   end
   
   def unload
@@ -231,8 +242,8 @@ class PC_main
     $game_system.message_event = -1
     $game_system.name = ""
     
+    #$game_switches[276] = false # This set the PC as unoccupied
     $game_switches[561] = false
-    $game_switches[276] = false
   end
     
 
@@ -243,7 +254,7 @@ class PC_main
     if @select < @menu.length
       @menuExtra = []
       item = @menu[@select]
-      if item.has_key?("array") && item["array"][@selectH].has_key?("acc")
+      if item.has_key?("array") && item["array"].length > 0 && item["array"][@selectH].has_key?("acc")
         @menuExtra = item["array"][@selectH]["acc"]
       end
     end
@@ -251,7 +262,7 @@ class PC_main
     counter = 0
     @menu.each do |value|
       text = value["name"]
-      if value.has_key?("array")
+      if value.has_key?("array") && value["array"].length > 0
         text = value["array"][@selectH]["name"]
       end
       @sidebar.bitmap.draw_text(0, counter * 40, 120, 40, text, 1)

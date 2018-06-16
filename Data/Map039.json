@@ -19389,14 +19389,6 @@
             },
             {
               "typeName": "RPG::EventCommand",
-              "code": 119,
-              "indent": 0,
-              "parameters": [
-                "mod"
-              ]
-            },
-            {
-              "typeName": "RPG::EventCommand",
               "code": 355,
               "indent": 0,
               "parameters": [
@@ -19437,10 +19429,10 @@
             },
             {
               "typeName": "RPG::EventCommand",
-              "code": 118,
+              "code": 119,
               "indent": 0,
               "parameters": [
-                "mod"
+                "skip"
               ]
             },
             {
@@ -19567,6 +19559,14 @@
               "code": 404,
               "indent": 0,
               "parameters": []
+            },
+            {
+              "typeName": "RPG::EventCommand",
+              "code": 118,
+              "indent": 0,
+              "parameters": [
+                "skip"
+              ]
             },
             {
               "typeName": "RPG::EventCommand",
@@ -34624,6 +34624,24 @@
           "list": [
             {
               "typeName": "RPG::EventCommand",
+              "code": 121,
+              "indent": 0,
+              "parameters": [
+                51,
+                51,
+                0
+              ]
+            },
+            {
+              "typeName": "RPG::EventCommand",
+              "code": 355,
+              "indent": 0,
+              "parameters": [
+                "$currentPrivateCellDamsel = \"suki\""
+              ]
+            },
+            {
+              "typeName": "RPG::EventCommand",
               "code": 313,
               "indent": 0,
               "parameters": [
@@ -34714,79 +34732,30 @@
             },
             {
               "typeName": "RPG::EventCommand",
-              "code": 355,
-              "indent": 0,
-              "parameters": [
-                "$pc_default = PC_main.new()"
-              ]
-            },
-            {
-              "typeName": "RPG::EventCommand",
               "code": 117,
               "indent": 0,
               "parameters": [
-                96
+                220
               ]
             },
             {
               "typeName": "RPG::EventCommand",
-              "code": 106,
+              "code": 121,
               "indent": 0,
               "parameters": [
-                2
+                276,
+                276,
+                1
               ]
             },
             {
               "typeName": "RPG::EventCommand",
-              "code": 355,
+              "code": 121,
               "indent": 0,
               "parameters": [
-                "$pc_default.step()"
-              ]
-            },
-            {
-              "typeName": "RPG::EventCommand",
-              "code": 355,
-              "indent": 0,
-              "parameters": [
-                "$pc_default.unload()"
-              ]
-            },
-            {
-              "typeName": "RPG::EventCommand",
-              "code": 209,
-              "indent": 0,
-              "parameters": [
-                -1,
-                {
-                  "typeName": "RPG::MoveRoute",
-                  "list": [
-                    {
-                      "typeName": "RPG::MoveCommand",
-                      "code": 19,
-                      "parameters": []
-                    },
-                    {
-                      "typeName": "RPG::MoveCommand",
-                      "code": 0,
-                      "parameters": []
-                    }
-                  ],
-                  "repeat": false,
-                  "skippable": false
-                }
-              ]
-            },
-            {
-              "typeName": "RPG::EventCommand",
-              "code": 509,
-              "indent": 0,
-              "parameters": [
-                {
-                  "typeName": "RPG::MoveCommand",
-                  "code": 19,
-                  "parameters": []
-                }
+                51,
+                51,
+                1
               ]
             },
             {

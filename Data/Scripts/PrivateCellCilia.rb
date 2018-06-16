@@ -38,10 +38,36 @@ class PrivateCellDamselCilia < PrivateCellDamsel
     @homophilia = 2
 		@masochism = -1
 		
-		
 		@disposition = 1
 		@disposition_index = 664
 		@disposition_min = 1
+    
+    #outfits
+    @outfits = [
+      {
+        "name" => "default",
+        "action" => "outfitdefault",
+      },
+      {
+        "name" => "explorer",
+        "action" => "outfit1",
+        "acc" => [
+          {"name" => "hat", "action" => ["outfit1", "acc1"]}, 
+        ]
+      },
+      {
+        "name" => "librarian",
+        "action" => "outfit2",
+        "acc" => [
+          {"name" => "glasses", "action" => ["outfit2", "acc1"]}, 
+        ]
+      },
+    ]
+    
+    #special gags
+    @specialGags = [
+      { "name" => "special 1", "action" => "sgag1", },
+    ]
 		
 		#bases
 		list = {'back' => [30,'PCCilia',0,0,-250,0,100,100,255,0],'outfit1'=> [30,'PCCiliaExplorer',0,0,-250,0,100,100,255,0],'outfit2'=> [30,'PCCiliaLibrarian',0,0,-250,0,100,100,255,0]}

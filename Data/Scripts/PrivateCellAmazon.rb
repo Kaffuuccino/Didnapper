@@ -42,6 +42,23 @@ class PrivateCellDamselAmazon < PrivateCellDamsel
 		@disposition = 1
 		@disposition_index = 662
 		@disposition_min = 1
+    
+    #outfits
+    @outfits = [
+      {
+        "name" => "default",
+        "action" => "outfitdefault",
+      },
+      {
+        "name" => "hula",
+        "action" => "outfit1",
+      },
+    ]
+    
+    #special gags
+    @specialGags = [
+      { "name" => "special 1", "action" => "sgag1", },
+    ]
 		
 		#bases
 		list = {'back' => [30,'PCAmazon2Base',0,0,-100,0,100,100,255,0],'outfit1'=> [30,'PCAmazon2BaseHula',0,0,-100,0,100,100,255,0]}

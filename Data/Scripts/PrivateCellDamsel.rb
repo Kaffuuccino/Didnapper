@@ -391,17 +391,20 @@ class PrivateCellDamsel
 				when 'blindfold'
 				@@saved[@tag]['blindfold'] = !@@saved[@tag]['blindfold']
 				if @@saved[@tag]['blindfold']
+          $game_variables[80] = 1
 					increaseEmotion('fear')
 					decreaseEmotion('happiness')
 					#@conversationStack = @dialogue['blindfold_on'][@@saved[@tag]['disposition']-1][mood[0]].clone
 					@conversationStack = getDialogue('blindfold_on',mood[0],@@saved[@tag]['disposition']-1)
 				else
+          $game_variables[80] = 0
 					decreaseEmotion('fear')
 					increaseEmotion('happiness')
 					#@conversationStack = @dialogue['blindfold_off'][@@saved[@tag]['disposition']-1][mood[0]].clone
 					@conversationStack = getDialogue('blindfold_off',mood[0],@@saved[@tag]['disposition']-1)
 				end
 				when 'clothgag'
+        $game_variables[79] = 1
 				#@conversationStack = @dialogue['gag'][@@saved[@tag]['disposition']-1][mood[0]].clone
 				@conversationStack = getDialogue('gag',mood[0],@@saved[@tag]['disposition']-1)
 				increaseEmotion('anger')
@@ -409,6 +412,7 @@ class PrivateCellDamsel
 				decreaseEmotion('happiness')
 				@@saved[@tag]['gag'] = 'cloth'
 				when 'cleavegag'
+        $game_variables[79] = 1
 				#@conversationStack = @dialogue['gag'][@@saved[@tag]['disposition']-1][mood[0]].clone
 				@conversationStack = getDialogue('gag',mood[0],@@saved[@tag]['disposition']-1)
 				increaseEmotion('anger')
@@ -416,6 +420,7 @@ class PrivateCellDamsel
 				decreaseEmotion('happiness')
 				@@saved[@tag]['gag'] = 'cleave'
 				when 'knotgag'
+        $game_variables[79] = 1
 				#@conversationStack = @dialogue['gag'][@@saved[@tag]['disposition']-1][mood[0]].clone
 				@conversationStack = getDialogue('gag',mood[0],@@saved[@tag]['disposition']-1)
 				increaseEmotion('anger')
@@ -423,6 +428,7 @@ class PrivateCellDamsel
 				decreaseEmotion('happiness')
 				@@saved[@tag]['gag'] = 'knot'
 				when 'otngag'
+        $game_variables[79] = 1
 				#@conversationStack = @dialogue['gag'][@@saved[@tag]['disposition']-1][mood[0]].clone
 				@conversationStack = getDialogue('gag',mood[0],@@saved[@tag]['disposition']-1)
 				increaseEmotion('anger')
@@ -430,6 +436,7 @@ class PrivateCellDamsel
 				decreaseEmotion('happiness')
 				@@saved[@tag]['gag'] = 'otn'
 				when 'ballgag'
+        $game_variables[79] = 1
 				#@conversationStack = @dialogue['gag'][@@saved[@tag]['disposition']-1][mood[0]].clone
 				@conversationStack = getDialogue('gag',mood[0],@@saved[@tag]['disposition']-1)
 				increaseEmotion('anger')
@@ -437,6 +444,7 @@ class PrivateCellDamsel
 				decreaseEmotion('happiness')
 				@@saved[@tag]['gag'] = 'ball'
 				when 'bitgag'
+        $game_variables[79] = 1
 				#@conversationStack = @dialogue['gag'][@@saved[@tag]['disposition']-1][mood[0]].clone
 				@conversationStack = getDialogue('gag',mood[0],@@saved[@tag]['disposition']-1)
 				increaseEmotion('anger')
@@ -445,6 +453,7 @@ class PrivateCellDamsel
         contra = $game_variables[651]
 				@@saved[@tag]['gag'] = 'bit'
 				when 'ungag'
+        $game_variables[79] = 0
 				#@conversationStack = @dialogue['ungag'][@@saved[@tag]['disposition']-1][mood[0]].clone
 				@conversationStack = getDialogue('ungag',mood[0],@@saved[@tag]['disposition']-1)
 				decreaseEmotion('anger')
@@ -767,11 +776,19 @@ class PrivateCellDamsel
   end
   
   def getOutfits
-    return @outfits
+    if defined?(@outfits)
+      return @outfits
+    else
+      return []
+    end
   end
   
   def getSpecialGags
-    return @specialGags
+    if defined?(@specialGags)
+      return @specialGags
+    else
+      return []
+    end
   end
 end
 

@@ -38,10 +38,26 @@ class PrivateCellDamselAlexie < PrivateCellDamsel
     @homophilia = 3
 		@masochism = -1
 		
-		
 		@disposition = 2
 		@disposition_index = 664
 		@disposition_min = 1
+    
+    #outfits
+    @outfits = [
+      {
+        "name" => "default",
+        "action" => "outfitdefault",
+      },
+      {
+        "name" => "schoolgirl",
+        "action" => "outfit1",
+      },
+    ]
+    
+    #special gags
+    @specialGags = [
+      { "name" => "special 1", "action" => "sgag1", },
+    ]
 		
 		#bases
 		list = {'back' => [30,'PCAlexieBaseHat',0,0,-25,0,100,100,255,0],'outfit1'=> [30,'PCAlexieSchoolgirl',0,0,-25,0,100,100,255,0]}

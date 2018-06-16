@@ -38,10 +38,30 @@ class PrivateCellDamselCarol < PrivateCellDamsel
     @homophilia = 0
 		@masochism = 0
 		
-		
 		@disposition = 3
 		@disposition_index = 664
 		@disposition_min = 3
+    
+    #outfits
+    @outfits = [
+      {
+        "name" => "default",
+        "action" => "outfitdefault",
+      },
+      {
+        "name" => "burglar",
+        "action" => "outfit1",
+        "acc" => [
+          {"mask" => "hat", "action" => ["outfit1", "acc1"]}, 
+        ]
+      },
+    ]
+    
+    #special gags
+    @specialGags = [
+      { "name" => "special 1", "action" => "sgag1", },
+      { "name" => "special 2", "action" => "sgag2", },
+    ]
 		
 		#bases
 		list = {'back' => [30,'PCCarol',0,0,0,0,100,100,255,0],'outfit1'=> [30,'PCCarolBurglar',0,0,0,0,100,100,255,0]}

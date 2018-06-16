@@ -38,10 +38,30 @@ class PrivateCellDamselEvelyn < PrivateCellDamsel
     @homophilia = 3
 		@masochism = -1
 		
-		
 		@disposition = 3
 		@disposition_index = 664
 		@disposition_min = 2
+    
+    #outfits
+    @outfits = [
+      {
+        "name" => "default",
+        "action" => "outfitdefault",
+      },
+      {
+        "name" => "witch",
+        "action" => "outfit1",
+        "acc" => [
+          {"name" => "acc1", "action" => ["outfit1", "acc1"]},
+          {"name" => "acc2", "action" => ["outfit1", "acc2"]},
+        ]
+      },
+    ]
+    
+    #special gags
+    @specialGags = [
+      { "name" => "special 1", "action" => "sgag1", },
+    ]
 		
 		#bases
 		list = {'back' => [30,'PCEvelyn',0,0,0,0,100,100,255,0],'outfit1'=> [30,'PCEvelynWitch',0,0,0,0,100,100,255,0]}

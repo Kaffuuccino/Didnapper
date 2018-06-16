@@ -34,10 +34,23 @@ class PrivateCellDamselAngel < PrivateCellDamsel
     @homophilia = 2
 		@masochism = -1
 		
-		
 		@disposition = 1
 		@disposition_index = 658
 		@disposition_min = 1
+    
+    #outfits
+    @outfits = [
+      {
+        "name" => "default",
+        "action" => "outfitdefault",
+      },
+    ]
+    
+    #special gags
+    @specialGags = [
+      { "name" => "special 1", "action" => "sgag1", },
+      { "name" => "special 2", "action" => "sgag2", },
+    ]
 		
 		#bases
 		list = {'back' => [30,'PCAngelBase',0,0,0,0,100,100,255,0],'head'=> [30,'PCAngelBase',0,0,0,0,100,100,255,0], 'front' => [30,'PCAngelBase',0,0,0,0,100,100,255,0]}

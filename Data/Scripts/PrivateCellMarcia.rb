@@ -38,10 +38,32 @@ class PrivateCellDamselMarcia < PrivateCellDamsel
     @homophilia = 4
 		@masochism = 3
 		
-		
 		@disposition = 1
 		@disposition_index = 664
 		@disposition_min = 1
+    
+    #special gags
+    @specialGags = [
+      { "name" => "special 1", "action" => "sgag1", },
+      { "name" => "special 2", "action" => "sgag2", },
+      { "name" => "special 3", "action" => "sgag3", },
+    ]
+    
+    #outfits
+    @outfits = [
+      {
+        "name" => "default",
+        "action" => "outfitdefault",
+      },
+      {
+        "name" => "bikini",
+        "action" => "outfit1",
+        "acc" => [
+          {"name" => "goggles", "action" => ["outfit1", "acc1"]},
+          {"name" => "inflatable ring", "action" => ["outfit1", "acc2"]},
+        ]
+      },
+    ]
 		
 		#bases
 #		list = {'back' => [30,'PCMarciaBase',0,0,0,0,100,100,255,0]}

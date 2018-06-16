@@ -38,10 +38,27 @@ class PrivateCellDamselAthena < PrivateCellDamsel
     @homophilia = 4
 		@masochism = 4
 		
-		
 		@disposition = 1
 		@disposition_index = 664
 		@disposition_min = 1
+    
+    #special gags
+    @specialGags = [
+      { "name" => "special 1", "action" => "sgag1", },
+      { "name" => "special 2", "action" => "sgag2", },
+    ]
+    
+    #outfits
+    @outfits = [
+      {
+        "name" => "default",
+        "action" => "outfitdefault",
+      },
+      {
+        "name" => "gym wear",
+        "action" => "outfit1",
+      },
+    ]
 		
 		#bases
     #list = {'outfitdefault' => [30,'PCAthena',0,0,0,0,100,100,255,0],'outfit1'=> [30,'PCAthenaGym',0,0,0,0,100,100,255,0]}
