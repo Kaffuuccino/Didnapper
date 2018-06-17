@@ -112,13 +112,14 @@ class PC_main
     @background.bitmap.fill_rect(0, 0, 640, 480, Color.new(0,0,0, 150))
     
     @sidebar = Sprite.new()
-    @sidebar.x = 520
-    @sidebar.bitmap = Bitmap.new(120, 320)
+    @sidebar.x = 500
+    @sidebar.bitmap = Bitmap.new(140, 320)
     
     @pointer = Sprite.new()
-    @pointer.bitmap = Bitmap.new(20, 20)
-    @pointer.bitmap.fill_rect(0, 0, 20, 20, Color.new(255,255,255))
-    @pointer.x = 520
+    @pointer.bitmap = Bitmap.new("Graphics/Pictures/Selector.png")
+    #@pointer.bitmap = Bitmap.new(20, 20)
+    #@pointer.bitmap.fill_rect(0, 0, 20, 20, Color.new(255,255,255))
+    @pointer.x = 503
     @pointer.y = 10
     
     @breadcrumbs = [];
@@ -249,7 +250,7 @@ class PC_main
 
   def redraw_menu
     @sidebar.bitmap.clear()
-    @sidebar.bitmap.fill_rect(0, 0, 120, 320, Color.new(0,0,0, 200))
+    @sidebar.bitmap.fill_rect(0, 0, 140, 320, Color.new(0,0,0, 200))
     
     if @select < @menu.length
       @menuExtra = []
@@ -265,11 +266,11 @@ class PC_main
       if value.has_key?("array") && value["array"].length > 0
         text = value["array"][@selectH]["name"]
       end
-      @sidebar.bitmap.draw_text(0, counter * 40, 120, 40, text, 1)
+      @sidebar.bitmap.draw_text(0, counter * 40, 140, 40, text, 1)
       counter += 1
     end
     @menuExtra.each do |value|
-      @sidebar.bitmap.draw_text(0, counter * 40, 120, 40, value["name"], 1)
+      @sidebar.bitmap.draw_text(0, counter * 40, 140, 40, value["name"], 1)
       counter += 1
     end
     

@@ -54,6 +54,13 @@ class PrivateCellDamselMaid < PrivateCellDamsel
   end
 	def initialize
     @tag = 'maid'
+    @sprite = "MaidNataleigh"
+    @sprites = {
+      "t" => "MaidNataleighTied",
+      "tg" => "MaidNataleighTiedGagged",
+      "tb" => "MaidNataleighTiedBlindfold",
+      "tgb" => "MaidNataleighTiedGaggedBlindfold",
+    }
 		super()
 		#personality
 		@emotions['fear'] = [3,0]

@@ -27,6 +27,7 @@ class PrivateCellDamselAmazon < PrivateCellDamsel
 	end
 	def initialize
     @tag = 'amazon'
+    @sprite = "AmazonQueen"
 		super()
 		#personality
 		@emotions['fear'] = [3,0]

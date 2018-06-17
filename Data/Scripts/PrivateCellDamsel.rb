@@ -1,14 +1,18 @@
-def pc_regen
+def pc_regen()
 	return $privateCellDamsels[$currentPrivateCellDamsel].regeneratePicture
 end
 def pc_action(act)
   $privateCellDamsels[$currentPrivateCellDamsel].performAction(act)
 end
-def pc_getMood
+def pc_getMood()
   return $privateCellDamsels[$currentPrivateCellDamsel].getMood[0]
 end
-def pc_getDisposition
+def pc_getDisposition()
   return $privateCellDamsels[$currentPrivateCellDamsel].getDisposition
+end
+
+def pc_updateSprites()
+  $privateCellDamsels[$currentPrivateCellDamsel].updateSprites()
 end
 
 $override_pic['pc_canvas'] = Bitmap.new(640,480)
@@ -32,6 +36,7 @@ class PrivateCellDamsel
 
     @@saved = {}
     @@gags = ['ungagged','cloth','cleave','knot','otn','bit','ball']
+    
 	def initialize
     Graphics.update
     if !@@saved.has_key?(@tag)
@@ -453,13 +458,15 @@ class PrivateCellDamsel
         contra = $game_variables[651]
 				@@saved[@tag]['gag'] = 'bit'
 				when 'ungag'
-        $game_variables[79] = 0
-				#@conversationStack = @dialogue['ungag'][@@saved[@tag]['disposition']-1][mood[0]].clone
-				@conversationStack = getDialogue('ungag',mood[0],@@saved[@tag]['disposition']-1)
-				decreaseEmotion('anger')
-				decreaseEmotion('shyness')
-				increaseEmotion('happiness')
-				@@saved[@tag]['gag'] = 'ungagged'
+        if @@saved[@tag]['gag'] != 'ungagged'
+          $game_variables[79] = 0
+          #@conversationStack = @dialogue['ungag'][@@saved[@tag]['disposition']-1][mood[0]].clone
+          @conversationStack = getDialogue('ungag',mood[0],@@saved[@tag]['disposition']-1)
+          decreaseEmotion('anger')
+          decreaseEmotion('shyness')
+          increaseEmotion('happiness')
+          @@saved[@tag]['gag'] = 'ungagged'
+        end
 				else
 					if action[0..5] == 'outfit' && @@saved[@tag]['outfit'] != action
 						@@saved[@tag]['outfit'] = action
@@ -500,6 +507,7 @@ class PrivateCellDamsel
             end
           elsif action[0..3] == 'sgag'
             if @images['mouth'].has_key?(action)
+              $game_variables[79] = 1
               @conversationStack = getDialogue('gag',mood[0],@@saved[@tag]['disposition']-1)
               increaseEmotion('anger')
               increaseEmotion('shyness')
@@ -514,7 +522,7 @@ class PrivateCellDamsel
       end
     if $game_switches[124] == true
       @conversationStack = [] #Disables dialogue - Kendrian
-      if @@saved[@tag]['gag'] != 'ungagged' then mmph
+      if @@saved[@tag]['gag'] != 'ungagged' then mmph()
       end
     end
     
@@ -562,8 +570,14 @@ class PrivateCellDamsel
 				#wSay(dia['text'],"")
 			#end
 		end
-    saveVars
+    saveVars()
+    checkForUpdate()
+    updateSprites()
 	end
+  
+  def checkForUpdate
+    # Extend this to do things like character skills
+  end
  
 	def eye_status
 		blink_duration = 200
@@ -789,6 +803,31 @@ class PrivateCellDamsel
     else
       return []
     end
+  end
+  
+  def updateSprites()
+    if !defined?(@sprite)
+      return
+    end
+    
+    filename = getSpriteName() + ".png"
+    
+    event = $game_map.events[5]
+    event.set_graphic(filename)
+    #actor = $game_actors[@@actorId]
+    #actor.set_graphic("Suki Blindfold.png", 0, "", 0)
+  end
+  
+  def getSpriteName()
+    filename = @sprite + "Tied"
+    if @@saved[@tag]['gag'] != 'ungagged'
+      filename += "Gagged"
+    end
+    if @@saved[@tag]['blindfold']
+      filename += "Blindfold"
+    end
+    
+    return filename
   end
 end
 

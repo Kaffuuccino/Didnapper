@@ -2,6 +2,7 @@
 #[image number, name, origin,appointment method?(0 for direct),x,y,zoomx,zoomy,opacity,blend_type]
 
 class PrivateCellDamselEsther < PrivateCellDamsel
+  
 	def mmph
     mood = getMood
 		tickle = ticklelevel?
@@ -27,6 +28,13 @@ class PrivateCellDamselEsther < PrivateCellDamsel
 	end
 	def initialize
     @tag = 'esther'
+    @sprite = "Esther"
+    @sprites = {
+      "t" => "EstherTied",
+      "tg" => "EstherTiedGagged",
+      "tb" => "EstherTiedBlindfold",
+      "tgb" => "EstherTiedGaggedBlindfold",
+    }
 		super()
 		#personality
 		@emotions['fear'] = [4,0]

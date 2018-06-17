@@ -26,6 +26,7 @@ class PrivateCellDamselMermaid < PrivateCellDamsel
 	end
 	def initialize
     @tag = 'mermaid'
+    @sprite = "Mermaid"
 		super()
 		#personality
 		@emotions['fear'] = [5,0]

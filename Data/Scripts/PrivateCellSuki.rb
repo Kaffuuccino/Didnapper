@@ -2,7 +2,7 @@
 #[image number, name, origin,appointment method?(0 for direct),x,y,zoomx,zoomy,opacity,blend_type]
 
 class PrivateCellDamselSuki < PrivateCellDamsel
-	def mmph
+	def mmph()
     mood = getMood
 		tickle = ticklelevel?
 		if tickle >= 1 #tickle
@@ -27,8 +27,16 @@ class PrivateCellDamselSuki < PrivateCellDamsel
       Audio.se_play("Audio/SE/mediummmmph3", 100, 100)
 		end
 	end
+  
+  def checkForUpdate()
+    actor = $game_actors[@@actorId]
+    if ticklelevel? >= 4 && !actor.skill_learn?(201)
+      actor.learn_skill(201) # freedom desire
+      p("Learnt")
+    end
+  end
 
-	def initialize
+	def initialize()
     @tag = 'suki'
 		super()
 		#personality

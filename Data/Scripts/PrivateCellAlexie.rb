@@ -25,8 +25,10 @@ class PrivateCellDamselAlexie < PrivateCellDamsel
       Audio.se_play("Audio/SE/gagtalk4.mp3", 100, 100)
 		end
 	end
+  
 	def initialize
     @tag = 'alexie'
+    @sprite = "ArcheologistCaptain"
 		super()
 		#personality
 		@emotions['anger'] = [3,0]

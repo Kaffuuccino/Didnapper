@@ -481,4 +481,11 @@ class Game_Character
       sy > 0 ? turn_down : turn_up
     end
   end
+  
+  #--------------------------------------------------------------------------
+  # * Set the events graphic
+  #--------------------------------------------------------------------------
+  def set_graphic(filename)
+    @character_name = filename
+  end
 end

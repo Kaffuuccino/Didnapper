@@ -25,8 +25,21 @@ class PrivateCellDamselCarol < PrivateCellDamsel
       Audio.se_play("Audio/SE/gagtalk4.mp3", 100, 100)
 		end
 	end
+  
+  def getSpriteName()
+    filename = "Carol new sprite tied"
+    if @@saved[@tag]['gag'] != 'ungagged'
+      filename += " gagged"
+    end
+    if @@saved[@tag]['blindfold']
+      filename += " blindfold"
+    end
+    return filename
+  end
+  
 	def initialize
     @tag = 'carol'
+    @sprite = "Carol new sprite"
 		super()
 		#personality
 		@emotions['fear'] = [3,0]

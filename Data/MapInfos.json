@@ -2900,7 +2900,7 @@
   },
   "39": {
     "typeName": "RPG::MapInfo",
-    "expanded": false,
+    "expanded": true,
     "name": "The Lair - Main Hall",
     "order": 15,
     "parent_id": 0,
@@ -4920,7 +4920,7 @@
     "name": "Trophy Hall",
     "order": 21,
     "parent_id": 144,
-    "scroll_x": 576,
+    "scroll_x": 611,
     "scroll_y": 288
   },
   "82": {

@@ -25,8 +25,21 @@ class PrivateCellDamselAlyssa < PrivateCellDamsel
       Audio.se_play("Audio/SE/gagtalk4.mp3", 100, 100)
 		end
 	end
+  
+  def getSpriteName()
+    filename = "Kurui tied"
+    if @@saved[@tag]['gag'] != 'ungagged'
+      filename += " gagged"
+    end
+    if @@saved[@tag]['blindfold']
+      filename += " blindfold"
+    end
+    return filename
+  end
+  
 	def initialize
     @tag = 'alyssa'
+    @sprite = "Kurui"
 		super()
 		#personality
 		@emotions['fear'] = [1,0]
